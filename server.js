@@ -9,10 +9,8 @@ function getTime(time){
 }
 
 function timestamp(port){
-    app.get('/',function(req,resp){
-        getTime(req.query);
-        resp.send(req.query);
-        document.getElementById('app').innerHTML = getTime(req.query);
+    app.get('/:time',function(req,resp){
+        resp.send(getTime(req.query));
     });
     app.listen(port);
     console.log("Listening on: " + port);
