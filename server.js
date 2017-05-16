@@ -19,4 +19,4 @@ function timestamp(port,file){
     console.log("Listening on: " + port);
 }
 
-timestamp(process.env.PORT || 3000,"index.html");
+timestamp(process.env.PORT || 3000,"./index.html");
