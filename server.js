@@ -9,8 +9,10 @@ function getTime(time){
     }
 }
 
-function timestamp(port,file){
-    app.use('/',express.static(path.join(__dirname,file)));
+function timestamp(port){
+    app.get('/', function(req, res) {
+    res.send(__dirname + 'index.html');
+});
     app.get('/:time',function(req,resp){
         let timequery = req.param.time;
         resp.send(getTime(timequery));
@@ -19,4 +21,4 @@ function timestamp(port,file){
     console.log("Listening on: " + port);
 }
 
-timestamp(process.env.PORT || 3000,"index.html");
+timestamp(process.env.PORT || 3000);
