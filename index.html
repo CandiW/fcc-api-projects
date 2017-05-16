@@ -1,17 +1,51 @@
 <!DOCTYPE>
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
 </head>
+<style>
+    body{
+        font-family: 'Source Sans Pro', sans-serif;
+    }
+    h1 {
+        color: chartreuse;
+        font-size: 40px;
+    }
+    h2 {
+        color: blueviolet;
+        font-size: 30px;
+    }
+    h3{
+        color: peru
+        ;
+    }
+</style>
 <body>
     <div id="app">
         <h1>Free Code Camp</h1>
         <h2>Timestamp Microservice</h2>
-        <p>User Stories:
+        <h3>User Stories:</h3>
+        <p>
             <ul>
 <li>1) I can pass a string as a parameter, and it will check to see whether that string contains either a unix timestamp or a natural language date (example: January 1, 2016)</li>
 <li>2) If it does, it returns both the Unix timestamp and the natural language form of that date.</li>
 <li>3) If it does not contain a date or Unix timestamp, it returns null for those properties.</li>
             </ul>
         </p>
+
+<h3>Example usage:</h3>
+<code>
+https://candiw-timestamp-microservice.herokuapp.com/May%2016,%202017
+<br>
+<br>
+https://candiw-timestamp-microservice.herokuapp.com/1494970983
+</code>
+
+<h3>Example output:</h3>
+<code>
+{ "unix": 1494970983, "natural": "May 16, 2017" }
+</code>
+
     </div>
 </body>
 <script src="./server.js"></script>

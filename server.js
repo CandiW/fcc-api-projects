@@ -9,11 +9,15 @@ function getTime(time){
 }
 
 function timestamp(port){
+    app.get('/',function(req,resp){
+        resp.send('./index.html');
+    });
     app.get('/:time',function(req,resp){
-        resp.send(getTime(req.query));
+        let timequery = req.param.time;
+        resp.send(getTime(timequery));
     });
     app.listen(port);
     console.log("Listening on: " + port);
 }
 
-timestamp(process.env.port || 3000);
+timestamp(process.env.PORT || 3000);
