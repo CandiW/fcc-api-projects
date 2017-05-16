@@ -9,9 +9,11 @@ function getTime(time){
 }
 
 function timestamp(port){
+    /*
     app.get('/',function(req,resp){
         resp.send('./index.html');
     });
+    */
     app.get('/:time',function(req,resp){
         let timequery = req.param.time;
         resp.send(getTime(timequery));
