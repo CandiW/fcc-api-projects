@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/CandiW/fcc-api-projects.git"
+    "url": "git+https://github.com/CandiW/timestampMC.git"
   },
   "author": "CandiW",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/CandiW/fcc-api-projects/issues"
+    "url": "https://github.com/CandiW/timestampMC/issues"
   },
-  "homepage": "https://github.com/CandiW/fcc-api-projects#readme",
+  "homepage": "https://github.com/CandiW/timestampMC#readme",
   "dependencies": {
     "express": "^4.15.2"
   }
