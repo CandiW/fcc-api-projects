@@ -1,4 +1,5 @@
 const express = require('express');
+const path = require('path');
 let app = express();
 
 function getTime(time){
@@ -8,12 +9,8 @@ function getTime(time){
     }
 }
 
-function timestamp(port){
-    /*
-    app.get('/',function(req,resp){
-        resp.send('./index.html');
-    });
-    */
+function timestamp(port,file){
+    app.use(express.static(file));
     app.get('/:time',function(req,resp){
         let timequery = req.param.time;
         resp.send(getTime(timequery));
@@ -22,4 +19,4 @@ function timestamp(port){
     console.log("Listening on: " + port);
 }
 
-timestamp(process.env.PORT || 3000);
+timestamp(process.env.PORT || 3000,"./index.html");
