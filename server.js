@@ -41,10 +41,13 @@ function timestamp(port){
         next();
     });
 
-    app.get('/',function(req,resp,next){
-        resp.send("Hi, I'm here :)");
-        next();
-    });
+    app.set("view engine", "html");
+
+app.use(express.static(__dirname + '/public'));
+
+app.get("/", function (req, res) {
+    res.render("index");
+});
 
     app.get('/:time',function(req,resp){
         let timequery = req.params.time;
