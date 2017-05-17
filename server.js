@@ -15,10 +15,9 @@ function formatTime(time){
             natural: n
         }
     }
-    else if(moment(time).format("MMMM D, YYYY").isValid()){
+    else if(time !== 0){
         natural = time;
-        console.log(natural);
-        let u = moment(time).format('x');
+        let u = time.getTime();
         return {
             unix: u,
             natural: natural
