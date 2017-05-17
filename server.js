@@ -40,9 +40,7 @@ function timestamp(port){
         res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
         next();
     });
-
-    app.use('/', express.static(__dirname, "public"));
-
+    
     app.get('/:time',function(req,resp){
         let timequery = req.params.time;
         resp.send(formatTime(timequery));

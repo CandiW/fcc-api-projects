@@ -2,7 +2,7 @@
   "name": "timestampmc",
   "version": "1.0.0",
   "description": "project for free code camp",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "start": "node server.js"
   },
