@@ -42,8 +42,7 @@ function timestamp(port){
     });
 
     app.get('/',function(req,resp,next){
-        resp.writeHead(200, {"Content-Type": "text/html"});
-        resp.send(__dirname + "/index.html");
+        resp.send("Hi, I'm here :)");
         next();
     });
 
