@@ -41,12 +41,8 @@ function timestamp(port){
         next();
     });
 
-    app.set("view engine", "html");
-
-app.use(express.static(__dirname + '/public'));
-
-app.get("/", function (req, res) {
-    res.render("index");
+app.get("/", function (req, resp) {
+    resp.render("index.html");
 });
 
     app.get('/:time',function(req,resp){
