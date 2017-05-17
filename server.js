@@ -41,10 +41,8 @@ function timestamp(port){
         next();
     });
 
-app.get("/", function (req, resp) {
-    resp.send('Hello!');
-});
-
+    app.use('/',express.static("./public"));
+    
     app.get('/:time',function(req,resp){
         let timequery = req.params.time;
         resp.send(formatTime(timequery));
