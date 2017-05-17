@@ -9,15 +9,15 @@ function formatTime(time){
 
     if(time >= 0){
         unix = time;
-        let n = moment(unix).format("MM DD, YYYY");
+        let n = moment(unix).format("MMMM DD, YYYY");
         return {
             unix: unix,
             natural: n
         }
     }
-    else if(time === "" && moment.format("MM DD, YYYY").isValid()){
+    else if(time === "" && moment.format("MMMM DD, YYYY").isValid()){
         natural = time;
-        let u = moment(time,"MM DD, YYYY").format('X');
+        let u = moment(time,"MMMM DD, YYYY").format('X');
         return {
             unix: u,
             natural: natural
@@ -41,9 +41,8 @@ function timestamp(port){
         next();
     });
 
-    app.get('/', function(req, res) {
-    res.send("http://candiw-timestamp-microservice.heroku.com/index.html");
-});
+    app.use('/', express.static(__dirname, "/public"));
+
     app.get('/:time',function(req,resp){
         let timequery = req.params.time;
         resp.send(formatTime(timequery));
