@@ -40,7 +40,13 @@ function timestamp(port){
         res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
         next();
     });
-    
+
+    app.get('/',function(req,resp,next){
+        resp.writeHead(200, {"Content-Type": "text/html"});
+        resp.send(__dirname + "/index.html");
+        next();
+    });
+
     app.get('/:time',function(req,resp){
         let timequery = req.params.time;
         resp.send(formatTime(timequery));
