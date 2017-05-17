@@ -17,7 +17,8 @@ function formatTime(time){
     }
     else if(isNaN(time) && moment.format("MMMM D, YYYY").isValid()){
         natural = time;
-        let u = moment(time,"MMMM D, YYYY").format('x');
+        console.log(natural);
+        let u = moment(time).format('x');
         return {
             unix: u,
             natural: natural
