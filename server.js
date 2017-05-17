@@ -9,15 +9,15 @@ function formatTime(time){
 
     if(time >= 0){
         unix = time;
-        let n = moment(unix).format("MMMM DD, YYYY");
+        let n = moment(unix).format("MMMM D, YYYY");
         return {
             unix: unix,
             natural: n
         }
     }
-    else if(time === "" && moment.format("MMMM DD, YYYY").isValid()){
+    else if(isNaN(time) && moment.format("MMMM D, YYYY").isValid()){
         natural = time;
-        let u = moment(time,"MMMM DD, YYYY").format('X');
+        let u = moment(time,"MMMM D, YYYY").format('X');
         return {
             unix: u,
             natural: natural
@@ -42,7 +42,7 @@ function timestamp(port){
     });
 
     app.use('/',express.static("./public"));
-    
+
     app.get('/:time',function(req,resp){
         let timequery = req.params.time;
         resp.send(formatTime(timequery));
