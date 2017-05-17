@@ -42,7 +42,7 @@ function timestamp(port){
     });
 
 app.get("/", function (req, resp) {
-    resp.render("index.html");
+    resp.sendFile("./index.html");
 });
 
     app.get('/:time',function(req,resp){
