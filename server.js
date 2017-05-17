@@ -9,7 +9,7 @@ function formatTime(time){
 
     if(time >= 0){
         unix = time;
-        let n = moment(unix).format("MMMM D, YYYY");
+        let n = moment.unix(unix).format("MMMM D, YYYY");
         return {
             unix: unix,
             natural: n
@@ -17,7 +17,7 @@ function formatTime(time){
     }
     else if(isNaN(time) && moment.format("MMMM D, YYYY").isValid()){
         natural = time;
-        let u = moment(time,"MMMM D, YYYY").format('X');
+        let u = moment(time,"MMMM D, YYYY").format('x');
         return {
             unix: u,
             natural: natural
