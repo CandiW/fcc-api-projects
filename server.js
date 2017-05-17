@@ -41,7 +41,7 @@ function timestamp(port){
         next();
     });
 
-    app.use('/', express.static(__dirname, "/public"));
+    app.use('/', express.static(__dirname, "public"));
 
     app.get('/:time',function(req,resp){
         let timequery = req.params.time;
